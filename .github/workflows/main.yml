@@ -1,8 +1,8 @@
-name: End-to-end tests - 5 min scheduled
+name: End-to-end tests - every 8 hours scheduled
 on:
   schedule:
     # runs tests every 30 mins
-    - cron: '*/5 * * * *'
+    - cron: '0 */8 * * *'
 jobs:
   cypress-run:
     runs-on: windows-latest
