@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: End-to-end tests - schduled 10 min
 on:
   schedule:
     # runs tests every 30 mins
