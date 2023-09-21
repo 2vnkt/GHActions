@@ -1,8 +1,8 @@
-name: End-to-end tests
+name: End-to-end tests - scheduled
 on:
   schedule:
     # runs tests every 30 mins
-    - cron: '*/1 * * * *'
+    - cron: '*/10 * * * *'
 jobs:
   cypress-run:
     runs-on: windows-latest
@@ -13,6 +13,3 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          #build: npx cypress run --record --key a389ed13-2c1f-4f6c-81de-d39b04f1dd57
