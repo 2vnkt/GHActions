@@ -1,0 +1,18 @@
+name: End-to-end tests - scheduled
+on: push
+  #schedule:
+    # runs tests every 30 mins
+    #- cron: '*/1 * * * *'
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          #build: npx cypress run --record --key a389ed13-2c1f-4f6c-81de-d39b04f1dd57
