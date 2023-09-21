@@ -2,7 +2,7 @@ name: End-to-end tests
 on:
   schedule:
     # runs tests every 30 mins
-    - cron: '*/5 * * * *'
+    - cron: '*/1 * * * *'
 jobs:
   cypress-run:
     runs-on: windows-latest
