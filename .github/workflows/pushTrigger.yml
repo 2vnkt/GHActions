@@ -1,4 +1,4 @@
-name: End-to-end tests - scheduled
+name: End-to-end tests - push trigger
 on: push
   #schedule:
     # runs tests every 30 mins
