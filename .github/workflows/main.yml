@@ -15,6 +15,6 @@ jobs:
         uses: cypress-io/github-action@v6
         timeout-minutes: 10
         with:
-          build: npx run build
+          build: npm run build
           start: npx cypress run --record --key 313783b8-994b-4a56-98a5-61a7c11f7bcc
           browser: chrome
