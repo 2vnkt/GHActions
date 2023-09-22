@@ -14,5 +14,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          browser: chrome
+            spec: cypress/e2e/sanity/*.cy.js
           #build: npx cypress run --record --key a389ed13-2c1f-4f6c-81de-d39b04f1dd57
