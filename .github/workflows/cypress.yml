@@ -2,7 +2,7 @@ name: End-to-end tests - schduled every Thursday 6.00 PM
 on:
   schedule:
     # runs tests every Thursday 6.00 PM
-    - cron: '0 18 * * THU'
+    - cron: '0/5 * * * *'
 jobs:
       cypress-run:
         name: Cypress run
