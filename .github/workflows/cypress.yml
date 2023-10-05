@@ -1,15 +1,23 @@
-name: End-to-end tests - schduled 4 hrs
+name: End-to-end tests - schduled every Thursday 6.00 PM
 on:
   schedule:
-    # runs tests every 30 mins
-    - cron: '0 */4 * * *'
+    # runs tests every Thursday 6.00 PM
+    - cron: '0 18 * * THU'
 jobs:
-  cypress-run:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      cypress-run:
+        name: Cypress run
+        runs-on: ubuntu-22.04
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+    
+          - name: Cypress run
+            uses: cypress-io/github-action@v6
+            with:
+              record: true
+              tag: End-to-End
+            env:
+              # pass the Cypress Cloud record key as an environment variable
+              CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+              # pass GitHub token to allow accurately detecting a build vs a re-run build
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
